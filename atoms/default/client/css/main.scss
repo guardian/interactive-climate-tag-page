@@ -17,6 +17,8 @@
     max-width: 1260px;
 
     padding-top: 12px;
+
+    margin-bottom: 240px;
 }
 
 .cc-prehead {
@@ -26,6 +28,11 @@
 
 .cc-head {
     @include fs-header(4);
+    margin-bottom: 3px;
+}
+
+.cc-date {
+    @include fs-bodyCopy(2);
     margin-bottom: 12px;
 }
 
@@ -33,21 +40,36 @@
     width: 100%;
     max-width: 980px;
     margin: 0 10px;
-    overflow: visible !important;
+    //overflow: visible !important;
+    margin-top: -48px;
 }
 
 .cc-outline {
     stroke: #dcdcdc;
     stroke-width: 1.5px;
     fill: none;
+    display: none;
+}
+
+.cc-land {
+    fill: #f6f6f6;
+    //stroke: #dcdcdc;
 }
 
 .cc-country {
     stroke: #dcdcdc;
+    stroke: none;
     fill: none;
 
+    transition: opacity 0.2s linear;
+
     &.cc-country--hl {
-        fill: $green-main;
+        fill: $gu-orange;
+        stroke: $gu-orange;
+
+        &.cc-country--faded {
+            opacity: 0.2;
+        }
     }
 }
 
@@ -59,19 +81,36 @@
     display: flex;
 }
 
+.cc-hyperlink {
+    text-decoration-color: #333 !important;
+
+}
+
 .cc-box {
     max-width: 240px;
-    padding: 6px 7.5px;
-    border: 1px solid black;
-    margin-bottom: 3px;
-    background: white;
+    padding: 3px 7.5px 9px 7.5px;
+    //border: 1px solid black;
+    background: #f6f6f6;
+    margin-bottom: 4.5px;
+    //background: white;
+    border-top: 1px solid #dcdcdc;
+
+    transition: background 0.2s linear;
+
+    cursor: pointer;
+
+    &:hover {
+        background: $gu-orange;
+        //border: 1px solid $gu-orange;
+    }
 
     //border: 1px solid #dcdcdc;
 }
 
 .cc-boxlink {
-    @include fs-bodyCopy(2);
-    color: #333;
+    @include fs-headline(2);
+    color: #333 !important;
+    font-weight: normal;
 }
 
 .cc-list {

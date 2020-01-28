@@ -2,6 +2,48 @@
   {
     "headline": "Extinction Rebellion: charges against five protesters dismissed",
     "trail": "Judge says ‘abject failure’ by CPS left case lacking key prosecution witness as police officer goes on holiday",
+    "tags": [
+      {
+        "id": "environment/extinction-rebellion",
+        "title": "Extinction Rebellion"
+      },
+      {
+        "id": "environment/climate-change",
+        "title": "Climate change"
+      },
+      {
+        "id": "law/crown-prosecution-service",
+        "title": "Crown Prosecution Service"
+      },
+      {
+        "id": "law/law",
+        "title": "Law"
+      },
+      {
+        "id": "uk/police",
+        "title": "Police"
+      },
+      {
+        "id": "environment/environment",
+        "title": "Environment"
+      },
+      {
+        "id": "uk/uk",
+        "title": "UK news"
+      },
+      {
+        "id": "type/article",
+        "title": "Article"
+      },
+      {
+        "id": "tone/news",
+        "title": "News"
+      },
+      {
+        "id": "tracking/commissioningdesk/uk-environment",
+        "title": "UK Environment"
+      }
+    ],
     "url": "https://www.theguardian.com/environment/2020/jan/28/extinction-rebellion-charges-against-five-protesters-dismissed",
     "textLocations": [
       "London",
@@ -16,6 +58,68 @@
   {
     "headline": "Nightmares on wax: the environmental impact of the vinyl revival",
     "trail": "From toxic wastewater to greenhouse gas emissions, the boom in vinyl has dangerous effects – but streaming isn’t as clean an alternative as it looks",
+    "tags": [
+      {
+        "id": "music/vinyl",
+        "title": "Vinyl"
+      },
+      {
+        "id": "music/music-streaming",
+        "title": "Music streaming"
+      },
+      {
+        "id": "music/music",
+        "title": "Music"
+      },
+      {
+        "id": "culture/culture",
+        "title": "Culture"
+      },
+      {
+        "id": "environment/environment",
+        "title": "Environment"
+      },
+      {
+        "id": "environment/plastic",
+        "title": "Plastics"
+      },
+      {
+        "id": "environment/pollution",
+        "title": "Pollution"
+      },
+      {
+        "id": "environment/carbon-emissions",
+        "title": "Greenhouse gas emissions"
+      },
+      {
+        "id": "business/manufacturing-sector",
+        "title": "Manufacturing sector"
+      },
+      {
+        "id": "business/business",
+        "title": "Business"
+      },
+      {
+        "id": "environment/climate-change",
+        "title": "Climate change"
+      },
+      {
+        "id": "business/musicindustry",
+        "title": "Music industry"
+      },
+      {
+        "id": "type/article",
+        "title": "Article"
+      },
+      {
+        "id": "tone/features",
+        "title": "Features"
+      },
+      {
+        "id": "tracking/commissioningdesk/uk-culture",
+        "title": "UK Culture"
+      }
+    ],
     "url": "https://www.theguardian.com/music/2020/jan/28/vinyl-record-revival-environmental-impact-music-industry-streaming",
     "textLocations": [
       "Bangkok.\"",
@@ -29,6 +133,64 @@
   {
     "headline": "The Spin | Drought in southern Africa means cricket must look hard in the mirror",
     "trail": "‘I’m being sacrilegious but we need to look at artificial surfaces,’ says the Wanderers groundsman, Evan Flint, amid climate crisis",
+    "tags": [
+      {
+        "id": "sport/series/thespin",
+        "title": "The Spin"
+      },
+      {
+        "id": "sport/cricket",
+        "title": "Cricket"
+      },
+      {
+        "id": "sport/south-africa-cricket-team",
+        "title": "South Africa cricket team"
+      },
+      {
+        "id": "world/southafrica",
+        "title": "South Africa"
+      },
+      {
+        "id": "environment/climate-change",
+        "title": "Climate change"
+      },
+      {
+        "id": "sport/sport",
+        "title": "Sport"
+      },
+      {
+        "id": "sport/blog",
+        "title": "Sportblog"
+      },
+      {
+        "id": "tone/features",
+        "title": "Features"
+      },
+      {
+        "id": "type/article",
+        "title": "Article"
+      },
+      {
+        "id": "profile/tanyaaldred",
+        "title": "Tanya Aldred"
+      },
+      {
+        "id": "publication/theguardian",
+        "title": "The Guardian"
+      },
+      {
+        "id": "theguardian/sport",
+        "title": "Sport"
+      },
+      {
+        "id": "theguardian/sport/news",
+        "title": "News & features"
+      },
+      {
+        "id": "tracking/commissioningdesk/uk-sport",
+        "title": "UK Sport"
+      }
+    ],
     "url": "https://www.theguardian.com/sport/blog/2020/jan/28/the-spin-drought-southern-africa-cricket-must-look-hard-in-mirror",
     "textLocations": [
       "England",
@@ -56,6 +218,88 @@
   {
     "headline": "Africa is humanitarian 'blind spot': the world's top 10 forgotten crises – report",
     "trail": "Climate emergency is fuelling drought, food poverty and disaster in the global south but humanitarian crises under-reported",
+    "tags": [
+      {
+        "id": "global-development/global-development",
+        "title": "Global development"
+      },
+      {
+        "id": "world/natural-disasters",
+        "title": "Natural disasters and extreme weather"
+      },
+      {
+        "id": "world/madagascar",
+        "title": "Madagascar"
+      },
+      {
+        "id": "world/yemen",
+        "title": "Yemen"
+      },
+      {
+        "id": "world/syria",
+        "title": "Syria"
+      },
+      {
+        "id": "world/africa",
+        "title": "Africa"
+      },
+      {
+        "id": "world/middleeast",
+        "title": "Middle East and North Africa"
+      },
+      {
+        "id": "world/world",
+        "title": "World news"
+      },
+      {
+        "id": "world/burkina-faso",
+        "title": "Burkina Faso"
+      },
+      {
+        "id": "environment/climate-change",
+        "title": "Climate change"
+      },
+      {
+        "id": "environment/drought",
+        "title": "Drought"
+      },
+      {
+        "id": "global-development/food-security",
+        "title": "Food security"
+      },
+      {
+        "id": "environment/environment",
+        "title": "Environment"
+      },
+      {
+        "id": "environment/water",
+        "title": "Water"
+      },
+      {
+        "id": "world/zambia",
+        "title": "Zambia"
+      },
+      {
+        "id": "environment/greta-thunberg",
+        "title": "Greta Thunberg"
+      },
+      {
+        "id": "world/north-korea",
+        "title": "North Korea"
+      },
+      {
+        "id": "type/article",
+        "title": "Article"
+      },
+      {
+        "id": "profile/karenmcveigh",
+        "title": "Karen McVeigh"
+      },
+      {
+        "id": "tracking/commissioningdesk/global-development",
+        "title": "UK Global Development"
+      }
+    ],
     "url": "https://www.theguardian.com/global-development/2020/jan/28/african-continent-is-blind-spot-the-worlds-top-10-forgotten-crises",
     "textLocations": [
       "Zambia,",
@@ -78,6 +322,48 @@
   {
     "headline": "How the 'Venice of Africa' is losing its battle against the rising ocean",
     "trail": "Saint-Louis, the old colonial capital of Senegal, faces a flooding threat that has already seen entire villages lost to the Atlantic",
+    "tags": [
+      {
+        "id": "environment/series/seascape-the-state-of-our-oceans",
+        "title": "Seascape: the state of our oceans"
+      },
+      {
+        "id": "global-development/global-development",
+        "title": "Global development"
+      },
+      {
+        "id": "world/senegal",
+        "title": "Senegal"
+      },
+      {
+        "id": "world/africa",
+        "title": "Africa"
+      },
+      {
+        "id": "environment/environment",
+        "title": "Environment"
+      },
+      {
+        "id": "world/world",
+        "title": "World news"
+      },
+      {
+        "id": "environment/climate-change",
+        "title": "Climate change"
+      },
+      {
+        "id": "type/article",
+        "title": "Article"
+      },
+      {
+        "id": "tone/features",
+        "title": "Features"
+      },
+      {
+        "id": "tracking/commissioningdesk/global-development",
+        "title": "UK Global Development"
+      }
+    ],
     "url": "https://www.theguardian.com/environment/2020/jan/28/how-the-venice-of-africa-is-losing-its-battle-against-the-rising-ocean",
     "textLocations": [
       "northern Senegal.",
@@ -96,6 +382,80 @@
   {
     "headline": "Greyhound cuts ties with Adani mine after backlash from climate activists",
     "trail": "The bus company faced a boycott from opponents of the Carmichael coalmine after signing a contract with a firm building a railway for the project",
+    "tags": [
+      {
+        "id": "environment/series/environmental-investigations",
+        "title": "Environmental investigations"
+      },
+      {
+        "id": "environment/activism",
+        "title": "Environmental activism"
+      },
+      {
+        "id": "business/adani-group",
+        "title": "Adani Group"
+      },
+      {
+        "id": "environment/mining",
+        "title": "Mining"
+      },
+      {
+        "id": "environment/fossil-fuels",
+        "title": "Fossil fuels"
+      },
+      {
+        "id": "world/activism",
+        "title": "Activism"
+      },
+      {
+        "id": "environment/environment",
+        "title": "Environment"
+      },
+      {
+        "id": "australia-news/energy-australia",
+        "title": "Energy"
+      },
+      {
+        "id": "australia-news/australia-news",
+        "title": "Australia news"
+      },
+      {
+        "id": "world/india",
+        "title": "India"
+      },
+      {
+        "id": "australia-news/business-australia",
+        "title": "Business"
+      },
+      {
+        "id": "environment/climate-change",
+        "title": "Climate change"
+      },
+      {
+        "id": "environment/coal",
+        "title": "Coal"
+      },
+      {
+        "id": "australia-news/queensland",
+        "title": "Queensland"
+      },
+      {
+        "id": "type/article",
+        "title": "Article"
+      },
+      {
+        "id": "tone/news",
+        "title": "News"
+      },
+      {
+        "id": "profile/graham-readfearn",
+        "title": "Graham Readfearn"
+      },
+      {
+        "id": "tracking/commissioningdesk/australia-news",
+        "title": "Australia News"
+      }
+    ],
     "url": "https://www.theguardian.com/environment/2020/jan/28/greyhound-cuts-ties-with-adani-mine-after-backlash-from-climate-activists",
     "textLocations": [
       "Australia",
@@ -115,6 +475,60 @@
   {
     "headline": "Our ancestors managed fire country for millennia. We yearn to burn once more | Oliver Costello",
     "trail": "Cultural fire will protect the canopy where the koalas live – regenerating the tree that they eat",
+    "tags": [
+      {
+        "id": "commentisfree/commentisfree",
+        "title": "Opinion"
+      },
+      {
+        "id": "australia-news/bushfires",
+        "title": "Bushfires"
+      },
+      {
+        "id": "australia-news/indigenous-australians",
+        "title": "Indigenous Australians"
+      },
+      {
+        "id": "environment/climate-change",
+        "title": "Climate change"
+      },
+      {
+        "id": "environment/wildlife",
+        "title": "Wildlife"
+      },
+      {
+        "id": "world/wildfires",
+        "title": "Wildfires"
+      },
+      {
+        "id": "world/indigenous-peoples",
+        "title": "Indigenous peoples"
+      },
+      {
+        "id": "australia-news/australia-news",
+        "title": "Australia news"
+      },
+      {
+        "id": "world/natural-disasters",
+        "title": "Natural disasters and extreme weather"
+      },
+      {
+        "id": "environment/conservation",
+        "title": "Conservation"
+      },
+      {
+        "id": "type/article",
+        "title": "Article"
+      },
+      {
+        "id": "tone/comment",
+        "title": "Comment"
+      },
+      {
+        "id": "tracking/commissioningdesk/australia-opinion",
+        "title": "Australia Opinion"
+      }
+    ],
     "url": "https://www.theguardian.com/commentisfree/2020/jan/28/our-ancestors-managed-fire-country-for-millennia-we-yearn-to-burn-once-more",
     "textLocations": [
       "Australia",
@@ -124,6 +538,60 @@
   {
     "headline": "Hundreds of workers defy Amazon rules to protest company's climate failures",
     "trail": "Employees ‘needed to stand up for what’s right’ despite policy barring workers from speaking about business<br>",
+    "tags": [
+      {
+        "id": "technology/amazon",
+        "title": "Amazon"
+      },
+      {
+        "id": "environment/climate-change",
+        "title": "Climate change"
+      },
+      {
+        "id": "us-news/us-news",
+        "title": "US news"
+      },
+      {
+        "id": "technology/internet",
+        "title": "Internet"
+      },
+      {
+        "id": "technology/technology",
+        "title": "Technology"
+      },
+      {
+        "id": "technology/efinance",
+        "title": "E-commerce"
+      },
+      {
+        "id": "environment/environment",
+        "title": "Environment"
+      },
+      {
+        "id": "world/protest",
+        "title": "Protest"
+      },
+      {
+        "id": "world/activism",
+        "title": "Activism"
+      },
+      {
+        "id": "type/article",
+        "title": "Article"
+      },
+      {
+        "id": "tone/news",
+        "title": "News"
+      },
+      {
+        "id": "profile/kari-paul",
+        "title": "Kari Paul"
+      },
+      {
+        "id": "tracking/commissioningdesk/west-coast-news",
+        "title": "West Coast News"
+      }
+    ],
     "url": "https://www.theguardian.com/technology/2020/jan/27/amazon-workers-climate-protest",
     "textLocations": [],
     "imgLocation": "United States"
@@ -131,6 +599,72 @@
   {
     "headline": "Sainsbury's in £1bn investment to become carbon neutral by 2040",
     "trail": "Retailer’s plans include cutting down on waste and a plastic bottle deposit scheme",
+    "tags": [
+      {
+        "id": "business/j-sainsbury",
+        "title": "J Sainsbury"
+      },
+      {
+        "id": "business/supermarkets",
+        "title": "Supermarkets"
+      },
+      {
+        "id": "business/business",
+        "title": "Business"
+      },
+      {
+        "id": "business/retail",
+        "title": "Retail industry"
+      },
+      {
+        "id": "environment/energy",
+        "title": "Energy"
+      },
+      {
+        "id": "environment/environment",
+        "title": "Environment"
+      },
+      {
+        "id": "environment/carbon-emissions",
+        "title": "Greenhouse gas emissions"
+      },
+      {
+        "id": "environment/climate-change",
+        "title": "Climate change"
+      },
+      {
+        "id": "uk/uk",
+        "title": "UK news"
+      },
+      {
+        "id": "type/article",
+        "title": "Article"
+      },
+      {
+        "id": "tone/news",
+        "title": "News"
+      },
+      {
+        "id": "profile/joanna-partridge",
+        "title": "Joanna Partridge"
+      },
+      {
+        "id": "publication/theguardian",
+        "title": "The Guardian"
+      },
+      {
+        "id": "theguardian/mainsection",
+        "title": "Main section"
+      },
+      {
+        "id": "theguardian/mainsection/financial3",
+        "title": "Financial"
+      },
+      {
+        "id": "tracking/commissioningdesk/uk-business",
+        "title": "UK Business"
+      }
+    ],
     "url": "https://www.theguardian.com/business/2020/jan/28/sainsburys-in-1bn-investment-to-become-carbon-neutral-by-2040",
     "textLocations": [],
     "imgLocation": "United Kingdom"
@@ -138,6 +672,80 @@
   {
     "headline": "UK must create 120,000 green energy jobs by 2030 to meet targets",
     "trail": "National Grid report says target needs to be met if projects to cut greenhouse gas emissions are to go ahead<br>",
+    "tags": [
+      {
+        "id": "business/energy-industry",
+        "title": "Energy industry"
+      },
+      {
+        "id": "business/nationalgrid",
+        "title": "National Grid"
+      },
+      {
+        "id": "business/business",
+        "title": "Business"
+      },
+      {
+        "id": "environment/renewableenergy",
+        "title": "Renewable energy"
+      },
+      {
+        "id": "environment/energy",
+        "title": "Energy"
+      },
+      {
+        "id": "environment/environment",
+        "title": "Environment"
+      },
+      {
+        "id": "environment/climate-change",
+        "title": "Climate change"
+      },
+      {
+        "id": "environment/carbon-emissions",
+        "title": "Greenhouse gas emissions"
+      },
+      {
+        "id": "environment/carbon-capture-and-storage",
+        "title": "Carbon capture and storage (CCS)"
+      },
+      {
+        "id": "environment/fossil-fuels",
+        "title": "Fossil fuels"
+      },
+      {
+        "id": "uk/uk",
+        "title": "UK news"
+      },
+      {
+        "id": "type/article",
+        "title": "Article"
+      },
+      {
+        "id": "tone/news",
+        "title": "News"
+      },
+      {
+        "id": "profile/jillian-ambrose",
+        "title": "Jillian Ambrose"
+      },
+      {
+        "id": "publication/theguardian",
+        "title": "The Guardian"
+      },
+      {
+        "id": "theguardian/mainsection",
+        "title": "Main section"
+      },
+      {
+        "id": "theguardian/mainsection/financial3",
+        "title": "Financial"
+      },
+      {
+        "id": "tracking/commissioningdesk/uk-business",
+        "title": "UK Business"
+      }
+    ],
     "url": "https://www.theguardian.com/business/2020/jan/28/uk-must-create-120000-green-energy-jobs-by-2030-to-meet-targets-national-grid",
     "textLocations": [
       "Africa's",

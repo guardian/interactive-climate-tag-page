@@ -153,6 +153,8 @@ const unrepublicanise = str => {
 
 const parseName = (input, exceptions = {}, throwError = false) => {
 
+    if(!input) { return new Country(input, undefined) }
+
     let name = unrepublicanise(replaceQuotes(replaceDiacritics(expand(input.toLowerCase()))))
 
     //if(input.startsWith('Congo')) { console.log(expand(input.toLowerCase())) }
