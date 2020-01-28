@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fetch": "babel-node shared/server/fetch.js"
   },
   "author": "",
   "license": "ISC",
@@ -46,6 +47,7 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
+    "@babel/node": "^7.8.3",
     "@babel/plugin-proposal-optional-chaining": "^7.7.5",
     "@babel/plugin-transform-runtime": "^7.7.6",
     "@babel/preset-react": "^7.7.4",
@@ -53,8 +55,10 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-transform-import-bangtext-node": "^0.1.4",
+    "compromise": "^12.3.0",
     "gulp-replace": "^1.0.0",
     "mkdirp": "^0.5.1",
+    "node-fetch": "^2.6.0",
     "request-promise": "^4.2.5",
     "uglifyjs-webpack-plugin": "^2.2.0"
   }
