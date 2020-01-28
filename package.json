@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "fetch": "babel-node shared/server/fetch.js"
+    "fetch": "babel-node shared/server/fetch.js",
+    "parse_countries": "babel-node shared/server/parse_countries.js",
+    "locate": "babel-node shared/server/locate.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,7 +20,7 @@
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.7",
     "core-js": "^3.3.3",
-    "d3": "^5.12.0",
+    "d3": "^5.15.0",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-better-rollup": "^4.0.1",
@@ -56,10 +58,14 @@
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-transform-import-bangtext-node": "^0.1.4",
     "compromise": "^12.3.0",
+    "csv-parse": "^4.8.5",
+    "d3-geo-projection": "^2.8.1",
     "gulp-replace": "^1.0.0",
     "mkdirp": "^0.5.1",
     "node-fetch": "^2.6.0",
     "request-promise": "^4.2.5",
-    "uglifyjs-webpack-plugin": "^2.2.0"
+    "topojson": "^3.0.2",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "world-atlas": "^2.0.2"
   }
 }

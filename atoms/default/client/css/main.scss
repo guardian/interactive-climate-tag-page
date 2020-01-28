@@ -7,3 +7,75 @@
     margin: 0;
     padding: 0;
 }
+
+.cc-container {
+    @include mq($from: wide) {
+        //margin-left: 240px;
+    }
+
+    margin: auto;
+    max-width: 1260px;
+
+    padding-top: 12px;
+}
+
+.cc-prehead {
+    @include fs-header(1);
+    color: #767676;
+}
+
+.cc-head {
+    @include fs-header(4);
+    margin-bottom: 12px;
+}
+
+.cc-map {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 10px;
+    overflow: visible !important;
+}
+
+.cc-outline {
+    stroke: #dcdcdc;
+    stroke-width: 1.5px;
+    fill: none;
+}
+
+.cc-country {
+    stroke: #dcdcdc;
+    fill: none;
+
+    &.cc-country--hl {
+        fill: $green-main;
+    }
+}
+
+.cc-bubble {
+    fill: $gu-orange;
+}
+
+.cc-headlines {
+    display: flex;
+}
+
+.cc-box {
+    max-width: 240px;
+    padding: 6px 7.5px;
+    border: 1px solid black;
+    margin-bottom: 3px;
+    background: white;
+
+    //border: 1px solid #dcdcdc;
+}
+
+.cc-boxlink {
+    @include fs-bodyCopy(2);
+    color: #333;
+}
+
+.cc-list {
+    max-width: 240px;
+    width: 240px;
+    flex-shrink: 0;
+}

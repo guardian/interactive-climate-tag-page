@@ -11,7 +11,8 @@
       "Gloucestershire,",
       "Sussex,"
     ],
-    "imgLocation": "United Kingdom"
+    "imgLocation": "United Kingdom",
+    "countryCode": 826
   },
   {
     "headline": "Nightmares on wax: the environmental impact of the vinyl revival",
@@ -24,7 +25,8 @@
       "Los Angeles,",
       "Los Angeles,"
     ],
-    "imgLocation": "United Kingdom"
+    "imgLocation": "United Kingdom",
+    "countryCode": 826
   },
   {
     "headline": "The Spin | Drought in southern Africa means cricket must look hard in the mirror",
@@ -51,7 +53,8 @@
       "“Cape Town",
       "Cape Town"
     ],
-    "imgLocation": "South Africa"
+    "imgLocation": "South Africa",
+    "countryCode": 710
   },
   {
     "headline": "Africa is humanitarian 'blind spot': the world's top 10 forgotten crises – report",
@@ -73,7 +76,8 @@
       "Burundi,",
       "Burkina Faso,"
     ],
-    "imgLocation": "Madagascar"
+    "imgLocation": "Madagascar",
+    "countryCode": 450
   },
   {
     "headline": "How the 'Venice of Africa' is losing its battle against the rising ocean",
@@ -91,7 +95,8 @@
       "Indian Ocean",
       "district of Guet"
     ],
-    "imgLocation": "Senegal"
+    "imgLocation": "Senegal",
+    "countryCode": 686
   },
   {
     "headline": "Greyhound cuts ties with Adani mine after backlash from climate activists",
@@ -110,30 +115,24 @@
       "Brisbane’s",
       "Australia:"
     ],
-    "imgLocation": "Germany"
-  },
-  {
-    "headline": "Our ancestors managed fire country for millennia. We yearn to burn once more | Oliver Costello",
-    "trail": "Cultural fire will protect the canopy where the koalas live – regenerating the tree that they eat",
-    "url": "https://www.theguardian.com/commentisfree/2020/jan/28/our-ancestors-managed-fire-country-for-millennia-we-yearn-to-burn-once-more",
-    "textLocations": [
-      "Australia",
-      "South Wales."
-    ]
+    "imgLocation": "Germany",
+    "countryCode": 276
   },
   {
     "headline": "Hundreds of workers defy Amazon rules to protest company's climate failures",
     "trail": "Employees ‘needed to stand up for what’s right’ despite policy barring workers from speaking about business<br>",
     "url": "https://www.theguardian.com/technology/2020/jan/27/amazon-workers-climate-protest",
     "textLocations": [],
-    "imgLocation": "United States"
+    "imgLocation": "United States",
+    "countryCode": 840
   },
   {
     "headline": "Sainsbury's in £1bn investment to become carbon neutral by 2040",
     "trail": "Retailer’s plans include cutting down on waste and a plastic bottle deposit scheme",
     "url": "https://www.theguardian.com/business/2020/jan/28/sainsburys-in-1bn-investment-to-become-carbon-neutral-by-2040",
     "textLocations": [],
-    "imgLocation": "United Kingdom"
+    "imgLocation": "United Kingdom",
+    "countryCode": 826
   },
   {
     "headline": "UK must create 120,000 green energy jobs by 2030 to meet targets",
@@ -144,6 +143,7 @@
       "Yorkshire",
       "Scotland,"
     ],
-    "imgLocation": "United Kingdom"
+    "imgLocation": "United Kingdom",
+    "countryCode": 826
   }
 ]

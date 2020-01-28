@@ -195,7 +195,8 @@ const serve = () => {
       'server': {
           'baseDir': ".build"
       },
-      'port': 8000
+      'port': 8000,
+      'open': false
   });
 
   watch(["atoms/**/*", "shared/**/*", "!**/*.scss"], series(build, local));
