@@ -7,6 +7,19 @@ import lw from 'world-atlas/land-50m.json'
 import countries from 'shared/server/countries'
 
 import grouped from 'shared/server/grouped.json'
+import { Delaunay } from 'd3-delaunay'
+import { numberWithCommas } from 'shared/js/util'
+
+const codeToName = {}
+
+countries.forEach( row => {
+
+    codeToName[row.code] = row.name
+
+} )
+
+codeToName['GB'] = 'UK'
+codeToName['US'] = 'US'
 
 import * as topojson from 'topojson'
 
@@ -14,6 +27,10 @@ const countriesFc = topojson.feature(world, world.objects.countries)
 const landFc = topojson.feature(lw, lw.objects.land)
 
 const d3 = Object.assign({}, d3b, d3gp)
+
+const lab = (code, val) => {
+    return `<tspan class='cc-cname'>${codeToName[code]}</tspan><tspan class='cc-val' dx='3' >${numberWithCommas(val)}</tspan>`
+}
 
 class App extends React.Component {
 
@@ -66,7 +83,7 @@ class App extends React.Component {
                 .attr('d', path)
                 .attr('class', f => {
 
-                    if(this.props.articles.some( obj => {
+                    if(this.props.mapArticles.some( obj => {
 
                         return String(obj.countryCode) === String(f.id)
 
@@ -91,7 +108,7 @@ class App extends React.Component {
 
             if(!selected) {
 
-                return this.props.articles.some( obj => {
+                return this.props.mapArticles.some( obj => {
                     return String(obj.countryCode) === String(f.id)
                 } ) ? 'cc-country cc-country--hl' : 'cc-country'
 
@@ -101,7 +118,7 @@ class App extends React.Component {
                 return 'cc-country cc-country--hl'
             }
 
-            if(this.props.articles.some( obj => {
+            if(this.props.mapArticles.some( obj => {
 
                 return String(obj.countryCode) === String(f.id)
 
@@ -144,11 +161,24 @@ class App extends React.Component {
             .domain([ 0, 1000 ])
             .range([0, 40])
 
+        const countriesF = countries.filter( c => grouped[c.code] )
+            .sort((a, b) => grouped[b.code] - grouped[a.code])
+
+        const delaunay = Delaunay.from( countriesF
+            .map( c => {
+                return proj([c.lng, c.lat])
+            } ))
+
+        const voro = delaunay.voronoi([ 0, 0, width, height ])
+
+        console.log(voro)
+
         const bubbles = svg
             .selectAll('blah')
-            .data(countries)
+            .data(countriesF)
             .enter()
-            .append('circle')
+            .append('g')
+
             .each(function(d, i) {
 
                 const el = d3.select(this)
@@ -157,11 +187,51 @@ class App extends React.Component {
 
                 console.log(grouped[d.code])
 
+                el.attr('transform', `translate(${p[0]}, ${p[1]})`)
+
                 el
-                    .attr('cx', p[0])
-                    .attr('cy', p[1])
+                    .append('circle')
                     .attr('r', rScale(grouped[d.code]))
                     .attr('class', 'cc-bubble')
+
+            })
+
+        const labels = svg
+        .selectAll('blah')
+        .data(countriesF)
+        .enter()
+        .append('text')
+        .each(function(d, i) {
+
+            const el = d3.select(this)
+
+            const p = proj([d.lng, d.lat])
+
+            el.attr('x', p[0])
+            .attr('y', p[1] - rScale(grouped[d.code]) - 6)
+            .html(lab(d.code, grouped[d.code]))
+                .attr('class', 'cc-label')
+
+        })
+
+        const voroCells = svg
+            .selectAll('blah')
+            .data(countriesF)
+            .enter()
+            .append('path')
+            .attr('d', (d, i) => {
+
+                return voro.renderCell(i)
+
+            })
+            .attr('class', 'cc-voro')
+            .on('mouseenter', (d, i) => {
+
+                console.log('mouseenter')
+
+                labels
+                    
+                    .classed('cc-label--shown', (d, j) => j === i)
 
             })
 
@@ -177,12 +247,12 @@ class App extends React.Component {
 
     render() {
 
-        const { articles } = this.props
+        const { articles, mapArticles } = this.props
         const { selected } = this.state
 
         return <div>
 
-            <h3 class='cc-prehead'>Climate change</h3>
+            <h3 class='cc-prehead'>Environment <span class='cc-tri'></span> Climate change</h3>
             <h2 class='cc-head'>The world today in climate news</h2>
             <p class='cc-date'>28 January 2020</p>
 
@@ -245,6 +315,32 @@ class App extends React.Component {
             } ) }
             </div>
         </div>
+
+        <h2 class='cc-head cc-head-transformed'>More climate news</h2>
+
+        <div class='cc-list-section'>
+            <ul className='cc-list-ul'>
+                {
+
+                    articles.slice(8, 8 + 12).map( o => {
+
+                    return <a className='cc-list-a' target='_blank' href={o.url}><li className='cc-list-li'>{o.headline}</li></a>
+
+                    } )
+
+                }
+            </ul>
+
+            <button class='cc-more'>
+            <span class="inline-plus inline-icon ">
+<svg width="18" height="18" viewBox="0 0 18 18" class="inline-plus__svg inline-icon__svg">
+<path d="M8.2 0h1.6l.4 7.8 7.8.4v1.6l-7.8.4-.4 7.8H8.2l-.4-7.8L0 9.8V8.2l7.8-.4.4-7.8z"></path>
+</svg> </span>
+                
+                <span>More news</span></button>
+
+        </div>
+
             <h2 class='cc-head'>The Guardian's climate reporting mapped</h2>
             <p class='cc-date'>based on 5,000 articles</p>
 

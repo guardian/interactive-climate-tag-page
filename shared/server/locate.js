@@ -74,7 +74,7 @@ const guessLocation = entry => {
 }
 
 
-const data = JSON.parse(fs.readFileSync('shared/server/parsed_long.json'))
+const data = JSON.parse(fs.readFileSync('shared/server/parsed_short.json'))
 
     .filter( d => d )
 
@@ -92,4 +92,4 @@ const data = JSON.parse(fs.readFileSync('shared/server/parsed_long.json'))
 console.log(data.length)
 
 
-fs.writeFileSync('shared/server/located_long.json', JSON.stringify(data, null, 2))
+fs.writeFileSync('shared/server/located_short.json', JSON.stringify(data, null, 2))
