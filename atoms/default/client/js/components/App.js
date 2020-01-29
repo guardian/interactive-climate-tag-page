@@ -115,7 +115,7 @@ class App extends React.Component {
 
         const { selected, countryShapes } = this.state
 
-        console.log('highlighting:', selected)
+        //console.log('highlighting:', selected)
         
         countryShapes.attr('class', f => {
 
@@ -247,8 +247,6 @@ class App extends React.Component {
 
     hover (code) {
 
-        console.log('hovering ...')
-
         this.setState({ selected : code })
 
     }
@@ -267,7 +265,10 @@ class App extends React.Component {
             <div className='cc-headlines'>
 
             <div className='cc-list cc-list--left'
-            onMouseOut={ () => this.hover(null) }>
+            onMouseLeave={ () => {
+                console.log('list mouseout')
+                this.hover(null)
+            }}>
             { articles.slice(0, 4).map( obj => {
 
                 const isSelected = selectedArticles.find(d => d.countryCode === obj.countryCode)
@@ -297,7 +298,7 @@ class App extends React.Component {
             <svg className='cc-map' ref={this.setSvg} ></svg>
 
             <div className='cc-list cc-list--right'
-            onMouseOut={ () => this.hover(null) }>
+            onMouseLeave={ () => this.hover(null) }>
             { articles.slice(4, 8).map( obj => {
                 const isSelected = selectedArticles.find(d => d.countryCode === obj.countryCode)
                 
@@ -368,7 +369,7 @@ class App extends React.Component {
         console.log(prevState.selected, this.state.selected)
 
         if(prevState.selected !== this.state.selected) {
-            console.log('updating map ...')
+            //console.log('updating map ...')
             this.updateMap()
         }
 
