@@ -38,7 +38,8 @@ class App extends React.Component {
         super(props)
 
         this.state = {
-            selected : null
+            selected : null,
+            selectedArticles: []
         }
 
         this.setSvg = node => this.svg = node
@@ -50,7 +51,7 @@ class App extends React.Component {
     }
 
     drawMap () {
-
+        const articles = this.props.articles
         const width = this.svg.getBoundingClientRect().width
         const height = width*0.61
 
@@ -93,7 +94,13 @@ class App extends React.Component {
                     return 'cc-country'
 
                 })
-
+                .on('mouseover', (d) => {
+                    let selectedArticles = []
+                    articles.forEach(a => { if (a.countryCode === d.id) { selectedArticles.push(a) } })
+                    this.setState({ selectedArticles })
+                })
+                .on('mouseout', () => this.setState({ selectedArticles: [] }))
+ 
             this.setState({ countryShapes })
 
     }
@@ -253,7 +260,7 @@ class App extends React.Component {
     render() {
 
         const { articles, mapArticles } = this.props
-        const { selected } = this.state
+        const { selected, selectedArticles } = this.state
 
         return <div>
 
@@ -266,7 +273,9 @@ class App extends React.Component {
             <div className='cc-list cc-list--left'
             onMouseOut={ () => this.hover(null) }>
             { articles.slice(0, 4).map( obj => {
-                console.log(obj)
+
+                const isSelected = selectedArticles.find(d => d.countryCode === obj.countryCode)
+                
                 const toneTag = obj.tags.find(d => d.id.indexOf('tone/') > -1)
                 const tone = toneTag ? toneTag.id.split('/')[1] : 'no-tone'
                 const firstTag = obj.tags[0]
@@ -280,7 +289,7 @@ class App extends React.Component {
                 const headline = firstTag.title === 'Opinion' ? obj.headline.split('|')[0] : obj.headline.indexOf('|') > -1 ? obj.headline.split('|')[1] : obj.headline
                 const byline = firstTag.title === 'Opinion' ? obj.headline.split('|')[1] : ''
 
-                return <a className='cc-hyperlink' href={obj.url} target="_blank"><div className={`cc-box ge-background--${tone === 'comment' ? 'comment-light' : '#f6f6f6'} ge-border-color--${tone} ${byline ? 'cc-box-opinion' : ''}`}
+                return <a className='cc-hyperlink' href={obj.url} target="_blank"><div className={`cc-box ge-background--${tone === 'comment' ? 'comment-light' : '#f6f6f6'} ge-border-color--${tone} ${byline ? 'cc-box-opinion' : ''} ${isSelected ? byline ? 'selected-article-opinion' : 'selected-article' : ''}`}
                 onMouseOver={ () => this.hover(obj.countryCode) }
                 >   <span class={`cc-prefix ge-color--${tone}`}>{prefix ? prefix + ' / ' : ''}</span><h2 className='cc-boxlink'>{headline}</h2>
                     <div class={`cc-byline ge-color--${'comment'}`}>{byline}</div>
@@ -294,7 +303,8 @@ class App extends React.Component {
             <div className='cc-list cc-list--right'
             onMouseOut={ () => this.hover(null) }>
             { articles.slice(4, 8).map( obj => {
-                console.log(obj)
+                const isSelected = selectedArticles.find(d => d.countryCode === obj.countryCode)
+                
                 const toneTag = obj.tags.find(d => d.id.indexOf('tone/') > -1)
                 const tone = toneTag ? toneTag.id.split('/')[1] : 'no-tone'
                 const firstTag = obj.tags[0]
@@ -309,7 +319,7 @@ class App extends React.Component {
                 const headline = firstTag.title === 'Opinion' ? obj.headline.split('|')[0] : obj.headline
                 const byline = firstTag.title === 'Opinion' ? obj.headline.split('|')[1] : ''
 
-                return <a className='cc-hyperlink' href={obj.url} target="_blank"><div className={`cc-box ge-background--${tone === 'comment' ? 'comment-light' : '#f6f6f6'} ge-border-color--${tone} ${byline ? 'cc-box-opinion' : ''}`}
+                return <a className='cc-hyperlink' href={obj.url} target="_blank"><div className={`cc-box ge-background--${tone === 'comment' ? 'comment-light' : '#f6f6f6'} ge-border-color--${tone} ${byline ? 'cc-box-opinion' : ''} ${isSelected ? byline ? 'selected-article-opinion': 'selected-article' : ''}`}
                 onMouseOver={ () => this.hover(obj.countryCode) }
                 >   <span class={`cc-prefix ge-color--${tone}`}>{prefix ? prefix + ' / ' : ''}</span><h2 className='cc-boxlink'>{headline }</h2>
                     <div class={`cc-byline ge-color--${'comment'}`}>{byline}</div>
