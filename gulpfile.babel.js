@@ -106,7 +106,7 @@ const buildJS = () => {
             ]
         },
         devtool: 'source-map',
-        optimization : { minimizer: [new UglifyJsPlugin()] },
+        
         plugins: webpackPlugins,
         resolve: {
           alias: {
