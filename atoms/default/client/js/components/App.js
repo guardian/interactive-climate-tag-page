@@ -277,8 +277,7 @@ class App extends React.Component {
 
                 return <a className='cc-hyperlink' href={obj.url} target="_blank"><div className={`cc-box ge-background--${tone === 'comment' ? 'comment-light' : '#f6f6f6'} ge-border-color--${tone} ${byline ? 'cc-box-opinion' : ''}`}
                 onMouseOver={ () => this.hover(obj.countryCode) }
-                >   <span class={`cc-prefix ge-color--${tone}`}>{prefix ? prefix + ' / ' : ''}</span>
-                    <h2 className='cc-boxlink'>{headline}</h2>
+                >   <span class={`cc-prefix ge-color--${tone}`}>{prefix ? prefix + ' / ' : ''}</span><h2 className='cc-boxlink'>{headline}</h2>
                     <div class={`cc-byline ge-color--${'comment'}`}>{byline}</div>
                     </div></a>
 
@@ -307,8 +306,7 @@ class App extends React.Component {
 
                 return <a className='cc-hyperlink' href={obj.url} target="_blank"><div className={`cc-box ge-background--${tone === 'comment' ? 'comment-light' : '#f6f6f6'} ge-border-color--${tone} ${byline ? 'cc-box-opinion' : ''}`}
                 onMouseOver={ () => this.hover(obj.countryCode) }
-                >   <span class={`cc-prefix ge-color--${tone}`}>{prefix ? prefix + ' / ' : ''}</span>
-                    <h2 className='cc-boxlink'>{headline }</h2>
+                >   <span class={`cc-prefix ge-color--${tone}`}>{prefix ? prefix + ' / ' : ''}</span><h2 className='cc-boxlink'>{headline }</h2>
                     <div class={`cc-byline ge-color--${'comment'}`}>{byline}</div>
                     </div></a>
 
