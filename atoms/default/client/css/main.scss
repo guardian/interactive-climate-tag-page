@@ -5,7 +5,11 @@
 // @import "enhancer";
 
 $green: #3aec68;
-$main: $gu-orange;
+$main: $green;
+
+body {
+    background: #121212;
+}
 
 .interactive-atom {
     margin: 0;
@@ -27,7 +31,7 @@ $main: $gu-orange;
 
 .cc-prehead {
     @include fs-header(1);
-    color: #767676;
+    color: #bdbdbd;
 }
 
 .cc-head {
@@ -43,6 +47,7 @@ $main: $gu-orange;
 .cc-date {
     @include fs-bodyCopy(2);
     margin-bottom: 12px;
+    color: #bdbdbd;
 }
 
 .cc-map {
@@ -63,6 +68,7 @@ $main: $gu-orange;
     & text {
         pointer-events: none;
         user-select: none;
+        fill: #eaeaea;
     }
 }
 
@@ -82,8 +88,8 @@ $main: $gu-orange;
 }
 
 .cc-land {
-    fill: #f1f1f1;
-    //stroke: #dcdcdc;
+    fill: #282828;
+    stroke: #282828;
 }
 
 .cc-country {
@@ -99,9 +105,13 @@ $main: $gu-orange;
         cursor: pointer;
 
         &.cc-country--faded {
-            opacity: 0.2;
+            opacity: 0.1;
         }
     }
+}
+
+h2 {
+    color: white;
 }
 
 .cc-headlines {
@@ -173,7 +183,7 @@ $main: $gu-orange;
 }
 
 .cc-list-a {
-    color: #333 !important;
+    color: white !important;
 }
 
 .cc-list-section {
@@ -184,8 +194,11 @@ $main: $gu-orange;
 
 .cc-list-li {
     list-style-type: none;
+    font-size: 17px;
+    line-height: 21px;
     @include fs-headline(2);
     margin-bottom: 6px;
+    color: white;
 }
 
 .cc-tri {
@@ -196,14 +209,14 @@ $main: $gu-orange;
         height: 0;
         border-top: 0.375rem solid transparent;
         border-bottom: 0.375rem solid transparent;
-        border-left: 0.625rem solid #767676;
+        border-left: 0.625rem solid #bdbdbd;
     
 }
 
 .cc-more {
-    color: #fff;
-    background-color: #121212;
-    border-color: #121212;
+    color: black;
+    background-color: $green;
+    border-color: $green;
     border-radius: 200px;
 
     @include fs-textSans(3);
@@ -217,6 +230,7 @@ $main: $gu-orange;
     display: inline-block;
     transform: translateY(3px);
     margin-right: 6px;
+    fill: black;
 }
 
 .cc-voro {
@@ -230,6 +244,10 @@ $main: $gu-orange;
     text-anchor: middle;
     @include fs-bodyCopy(2);
     display: none;
+
+    stroke: #121212;
+    paint-order: stroke;
+    stroke-width: 3;
 
     &.cc-label--shown {
         display: block;
