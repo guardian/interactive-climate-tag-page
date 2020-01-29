@@ -1,0 +1,38 @@
+
+
+$colours: culture $culture-gold,
+news $news-red,
+comment $opinion-orange,
+sport $sport-blue,
+features $feature-red,
+comment-hover #FCF3ED,
+comment-light #FDF9F6,
+no-tone $news-red;
+
+@each $colour in $colours {
+    .ge-fill--#{nth($colour, 1)} {
+        fill: nth($colour, 2) !important;
+    }
+
+    .ge-stroke--#{nth($colour, 1)} {
+        stroke: nth($colour, 2) !important;
+    }
+
+    .ge-background--#{nth($colour, 1)} {
+        background: nth($colour, 2) !important;
+    }
+
+    .ge-color--#{nth($colour, 1)} {
+        color: nth($colour, 2) !important;
+    }
+
+    .ge-border-color--#{nth($colour, 1)} {
+        border-color: nth($colour, 2) !important;
+    }
+
+    .ge-party-key__party--#{nth($colour, 1)} {
+        &::before {
+            background-color: nth($colour, 2) !important;
+        }
+    }
+}

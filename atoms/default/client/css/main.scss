@@ -1,6 +1,7 @@
 @import "fonts";
 @import "mq";
 @import "palette";
+@import "tones";
 // @import "enhancer";
 
 .interactive-atom {
@@ -82,7 +83,7 @@
         stroke: $gu-orange;
 
         &.cc-country--faded {
-            opacity: 0.2;
+            opacity: 0.1;
         }
     }
 }
@@ -110,17 +111,33 @@
     cursor: pointer;
 
     &:hover {
-        background: $gu-orange;
+        background: #eaeaea;
         //border: 1px solid $gu-orange;
     }
 
     //border: 1px solid #dcdcdc;
 }
 
+.cc-box-opinion {
+    &:hover {
+        background: #FCF3ED !important;
+    }
+}
+
 .cc-boxlink {
     @include fs-headline(2);
     color: #333 !important;
     font-weight: normal;
+    display: inline;
+}
+
+.cc-prefix {
+    @include fs-header(1);
+}
+
+.cc-byline {
+    @include fs-headline(2);
+    font-style: italic;
 }
 
 .cc-list {
@@ -128,3 +145,4 @@
     width: 240px;
     flex-shrink: 0;
 }
+

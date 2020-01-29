@@ -191,12 +191,25 @@ class App extends React.Component {
             <div className='cc-list cc-list--left'
             onMouseOut={ () => this.hover(null) }>
             { articles.slice(0, 4).map( obj => {
+                console.log(obj)
+                const toneTag = obj.tags.find(d => d.id.indexOf('tone/') > -1)
+                const tone = toneTag ? toneTag.id.split('/')[1] : 'no-tone'
+                const firstTag = obj.tags[0]
+                let prefix = null
 
-                return <a className='cc-hyperlink' href={obj.url} target="_blank"><div className='cc-box'
+
+                if (firstTag.id.indexOf('/series/') > -1) {
+                    prefix = firstTag.title
+                }
+
+                const headline = firstTag.title === 'Opinion' ? obj.headline.split('|')[0] : obj.headline
+                const byline = firstTag.title === 'Opinion' ? obj.headline.split('|')[1] : ''
+
+                return <a className='cc-hyperlink' href={obj.url} target="_blank"><div className={`cc-box ge-background--${tone === 'comment' ? 'comment-light' : '#f6f6f6'} ge-border-color--${tone} ${byline ? 'cc-box-opinion' : ''}`}
                 onMouseOver={ () => this.hover(obj.countryCode) }
-                >
-                    <h2 className='cc-boxlink'>
-                        { obj.headline }</h2>
+                >   <span class={`cc-prefix ge-color--${tone}`}>{prefix ? prefix + ' / ' : ''}</span>
+                    <h2 className='cc-boxlink'>{headline}</h2>
+                    <div class={`cc-byline ge-color--${'comment'}`}>{byline}</div>
                     </div></a>
 
             } ) }
@@ -207,11 +220,26 @@ class App extends React.Component {
             <div className='cc-list cc-list--right'
             onMouseOut={ () => this.hover(null) }>
             { articles.slice(4, 8).map( obj => {
+                console.log(obj)
+                const toneTag = obj.tags.find(d => d.id.indexOf('tone/') > -1)
+                const tone = toneTag ? toneTag.id.split('/')[1] : 'no-tone'
+                const firstTag = obj.tags[0]
+                let prefix = null
 
-                return <a className='cc-hyperlink' href={obj.url} target="_blank"><div className='cc-box'
+
+                if (firstTag.id.indexOf('/series/') > -1) {
+                    prefix = firstTag.title
+                }
+
+
+                const headline = firstTag.title === 'Opinion' ? obj.headline.split('|')[0] : obj.headline
+                const byline = firstTag.title === 'Opinion' ? obj.headline.split('|')[1] : ''
+
+                return <a className='cc-hyperlink' href={obj.url} target="_blank"><div className={`cc-box ge-background--${tone === 'comment' ? 'comment-light' : '#f6f6f6'} ge-border-color--${tone} ${byline ? 'cc-box-opinion' : ''}`}
                 onMouseOver={ () => this.hover(obj.countryCode) }
-                >
-                    <h2 className='cc-boxlink'>{ obj.headline }</h2>
+                >   <span class={`cc-prefix ge-color--${tone}`}>{prefix ? prefix + ' / ' : ''}</span>
+                    <h2 className='cc-boxlink'>{headline }</h2>
+                    <div class={`cc-byline ge-color--${'comment'}`}>{byline}</div>
                     </div></a>
 
             } ) }
