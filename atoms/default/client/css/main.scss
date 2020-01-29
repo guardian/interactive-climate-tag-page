@@ -246,10 +246,6 @@ h2 {
     @include fs-bodyCopy(2);
     display: none;
 
-    stroke: #121212;
-    paint-order: stroke;
-    stroke-width: 3;
-
     &.cc-label--shown {
         display: block;
     }
