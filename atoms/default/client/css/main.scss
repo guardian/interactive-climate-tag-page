@@ -44,6 +44,20 @@
     margin-top: -48px;
 }
 
+.cc-bubblemap {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 10px;
+    margin-left: 250px;
+}
+
+.cc-bubble {
+    fill: $gu-blue;
+    //stroke: $gu-blue;
+    fill-opacity: 0.6;
+    //stroke-opacity: 0.8;
+}
+
 .cc-outline {
     stroke: #dcdcdc;
     stroke-width: 1.5px;
@@ -52,7 +66,7 @@
 }
 
 .cc-land {
-    fill: #f6f6f6;
+    fill: #f1f1f1;
     //stroke: #dcdcdc;
 }
 
@@ -71,10 +85,6 @@
             opacity: 0.2;
         }
     }
-}
-
-.cc-bubble {
-    fill: $gu-orange;
 }
 
 .cc-headlines {

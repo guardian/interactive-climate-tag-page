@@ -33,8 +33,15 @@ const guessLocation = entry => {
 
     const scores = {}
 
+    if(entry.tags.map(t => t.id).includes('uk/uk')) {
+        scores['GBR'] = 5
+    }
+    if(entry.tags.map( t => t.id ).includes('us-news/us-news')) {
+        scores['USA'] = 5
+    }
+
     if(imgCountry) {
-        scores[imgCountry] = 2
+        scores[imgCountry] = scores[imgCountry] ? scores[imgCountry] + 2 : 2
     }
 
     textCountries.forEach( code => {
@@ -53,17 +60,27 @@ const guessLocation = entry => {
         }
     } )
 
+    if(Object.entries(scores).length > 0) {
+
     const top = Object.entries(scores).sort((a, b) => {
         return b[1] - a[1]
     })[0][0]
 
     return geoff.alpha3ToNumeric(top)
+    } else {
+        return null
+    }
 
 }
 
 
-const data = JSON.parse(fs.readFileSync('shared/server/parsed.json'))
-    .map( entry => {
+const data = JSON.parse(fs.readFileSync('shared/server/parsed_long.json'))
+
+    .filter( d => d )
+
+    .map( (entry, i ) => {
+
+        console.log(i)
 
         const code = guessLocation(entry)
 
@@ -72,5 +89,7 @@ const data = JSON.parse(fs.readFileSync('shared/server/parsed.json'))
     } )
     .filter( d => d )
 
+console.log(data.length)
 
-fs.writeFileSync('shared/server/located.json', JSON.stringify(data, null, 2))
+
+fs.writeFileSync('shared/server/located_long.json', JSON.stringify(data, null, 2))

@@ -4,6 +4,9 @@ import * as d3gp from 'd3-geo-projection'
 
 import world from 'world-atlas/countries-50m.json'
 import lw from 'world-atlas/land-50m.json'
+import countries from 'shared/server/countries'
+
+import grouped from 'shared/server/grouped.json'
 
 import * as topojson from 'topojson'
 
@@ -22,6 +25,7 @@ class App extends React.Component {
         }
 
         this.setSvg = node => this.svg = node
+        this.setBubbleSvg = node => this.bubbleSvg = node
         this.drawMap = this.drawMap.bind(this)
         this.updateMap = this.updateMap.bind(this)
         this.hover = this.hover.bind(this)
@@ -37,7 +41,7 @@ class App extends React.Component {
             .attr('width', width)
             .attr('height', height - 12)
 
-        const proj = d3.geoWinkel3()
+        const proj = d3.geoNaturalEarth()
             .fitSize([ width, height ], { type : 'Sphere' })
 
         const path = d3.geoPath().projection(proj)
@@ -110,6 +114,59 @@ class App extends React.Component {
 
     }
 
+    drawBubbleMap() {
+
+        const width = this.svg.getBoundingClientRect().width
+        const height = width*0.61
+    
+        const svg = d3.select(this.bubbleSvg)
+            .attr('width', width)
+            .attr('height', height - 12)
+    
+        const proj = d3.geoNaturalEarth()
+            .fitSize([ width, height ], { type : 'Sphere' })
+    
+        const path = d3.geoPath().projection(proj)
+    
+        const outline = svg.append('path')
+            .attr('d', path({ type : 'Sphere' }))
+            .attr('class', 'cc-outline')
+    
+        const landShapes = svg
+            .selectAll('blah')
+            .data(landFc.features)
+            .enter()
+            .append('path')
+            .attr('d', path)
+            .attr('class', 'cc-land')
+
+        const rScale = d3.scaleSqrt()
+            .domain([ 0, 1000 ])
+            .range([0, 40])
+
+        const bubbles = svg
+            .selectAll('blah')
+            .data(countries)
+            .enter()
+            .append('circle')
+            .each(function(d, i) {
+
+                const el = d3.select(this)
+
+                const p = proj([d.lng, d.lat])
+
+                console.log(grouped[d.code])
+
+                el
+                    .attr('cx', p[0])
+                    .attr('cy', p[1])
+                    .attr('r', rScale(grouped[d.code]))
+                    .attr('class', 'cc-bubble')
+
+            })
+
+    }
+
     hover (code) {
 
         console.log('hovering ...')
@@ -126,7 +183,7 @@ class App extends React.Component {
         return <div>
 
             <h3 class='cc-prehead'>Climate change</h3>
-            <h2 class='cc-head'>Around the world</h2>
+            <h2 class='cc-head'>The world today in climate news</h2>
             <p class='cc-date'>28 January 2020</p>
 
             <div className='cc-headlines'>
@@ -160,12 +217,17 @@ class App extends React.Component {
             } ) }
             </div>
         </div>
+            <h2 class='cc-head'>The Guardian's climate reporting mapped</h2>
+            <p class='cc-date'>based on 5,000 articles</p>
+
+            <svg className='cc-bubblemap' ref={this.setBubbleSvg} ></svg>
         </div>
 
     }
 
     componentDidMount() {
         this.drawMap()
+        this.drawBubbleMap()
     }
 
     componentDidUpdate(prevProps, prevState) {
