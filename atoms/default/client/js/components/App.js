@@ -272,7 +272,7 @@ class App extends React.Component {
                     prefix = firstTag.title
                 }
 
-                const headline = firstTag.title === 'Opinion' ? obj.headline.split('|')[0] : obj.headline
+                const headline = firstTag.title === 'Opinion' ? obj.headline.split('|')[0] : obj.headline.indexOf('|') > -1 ? obj.headline.split('|')[1] : obj.headline
                 const byline = firstTag.title === 'Opinion' ? obj.headline.split('|')[1] : ''
 
                 return <a className='cc-hyperlink' href={obj.url} target="_blank"><div className={`cc-box ge-background--${tone === 'comment' ? 'comment-light' : '#f6f6f6'} ge-border-color--${tone} ${byline ? 'cc-box-opinion' : ''}`}
