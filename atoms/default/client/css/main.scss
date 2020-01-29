@@ -3,6 +3,9 @@
 @import "palette";
 // @import "enhancer";
 
+$green: #3aec68;
+$main: $gu-orange;
+
 .interactive-atom {
     margin: 0;
     padding: 0;
@@ -31,6 +34,11 @@
     margin-bottom: 3px;
 }
 
+.cc-head-transformed {
+    transform: translateY(10px);
+    position: absolute;
+}
+
 .cc-date {
     @include fs-bodyCopy(2);
     margin-bottom: 12px;
@@ -49,20 +57,22 @@
     max-width: 980px;
     margin: 0 10px;
     margin-left: 250px;
+    overflow: visible !important;
 }
 
 .cc-bubble {
-    fill: $gu-blue;
+    fill: $main;
     //stroke: $gu-blue;
-    fill-opacity: 0.6;
+    fill-opacity: 0.7;
     //stroke-opacity: 0.8;
+    //mix-blend-mode: multiply;
 }
 
 .cc-outline {
-    stroke: #dcdcdc;
+    stroke: #f6f6f6;
     stroke-width: 1.5px;
     fill: none;
-    display: none;
+    //display: none;
 }
 
 .cc-land {
@@ -78,8 +88,8 @@
     transition: opacity 0.2s linear;
 
     &.cc-country--hl {
-        fill: $gu-orange;
-        stroke: $gu-orange;
+        fill: $main;
+        stroke: $main;
 
         &.cc-country--faded {
             opacity: 0.2;
@@ -110,7 +120,7 @@
     cursor: pointer;
 
     &:hover {
-        background: $gu-orange;
+        background: $main;
         //border: 1px solid $gu-orange;
     }
 
@@ -127,4 +137,83 @@
     max-width: 240px;
     width: 240px;
     flex-shrink: 0;
+    margin-top: 18px;
+}
+
+// list of articles
+
+.cc-list-ul {
+    margin-left: 0 !important;
+    margin-bottom: 12px;
+}
+
+.cc-list-a {
+    color: #333;
+}
+
+.cc-list-section {
+    width: 760px;
+    margin-left: 250px;
+    margin-bottom: 36px;
+}
+
+.cc-list-li {
+    list-style-type: none;
+    @include fs-headline(2);
+    margin-bottom: 6px;
+}
+
+.cc-tri {
+    
+        margin: 0 3px;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-top: 0.375rem solid transparent;
+        border-bottom: 0.375rem solid transparent;
+        border-left: 0.625rem solid #767676;
+    
+}
+
+.cc-more {
+    color: #fff;
+    background-color: #121212;
+    border-color: #121212;
+    border-radius: 200px;
+
+    @include fs-textSans(3);
+    font-weight: bold;
+    line-height: 28px;
+    padding: 0 0.625rem;
+
+}
+
+.inline-icon {
+    display: inline-block;
+    transform: translateY(3px);
+    margin-right: 6px;
+}
+
+.cc-voro {
+    stroke: #dcdcdc;
+    stroke: none;
+    pointer-events: all;
+    fill: none;
+}
+
+.cc-label {
+    text-anchor: middle;
+    @include fs-bodyCopy(2);
+    display: none;
+
+    &.cc-label--shown {
+        display: block;
+    }
+}
+
+.cc-cname {
+    font-weight: bold;
+}
+
+.cc-val {
 }

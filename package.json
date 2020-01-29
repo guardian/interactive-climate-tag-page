@@ -60,6 +60,7 @@
     "babel-plugin-transform-import-bangtext-node": "^0.1.4",
     "compromise": "^12.3.0",
     "csv-parse": "^4.8.5",
+    "d3-delaunay": "^5.2.0",
     "d3-geo-projection": "^2.8.1",
     "gulp-replace": "^1.0.0",
     "lodash": "^4.17.15",

@@ -11,7 +11,7 @@ const save = (obj, i) => {
 
     out[i] = obj
 
-    fs.writeFileSync('shared/server/parsed_long.json', JSON.stringify(out, null, 2))
+    fs.writeFileSync('shared/server/parsed_short.json', JSON.stringify(out, null, 2))
 
 }
 
@@ -48,7 +48,7 @@ const parse = (article, i) => {
     console.log(url)
 
     fetch(url, {
-        'headers': { 'Cookie' : '_ga=GA1.3.1554421536.1567680633; cto_lwid=23c26aeb-8be8-48c9-a0d6-329e5fb53374; __gads=ID=2449a78b568fcae6:T=1567680633:S=ALNI_MbQ0SDZgWx77F5StCvApzjPoP-o2Q; _gid=GA1.3.1286121082.1580120300; permutive-session=%7B%22session_id%22%3A%22ad1081c1-bdb0-4ba9-87a1-bca51705c7c1%22%2C%22last_updated%22%3A%222020-01-28T09%3A36%3A05.258Z%22%7D; gutoolsAuth-assym=Zmlyc3ROYW1lPU5pa28mbGFzdE5hbWU9S29tbWVuZGEmZW1haWw9bmlrb2xhdXMua29tbWVuZGFAZ3VhcmRpYW4uY28udWsmYXZhdGFyVXJsPWh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hLS9BQXVFN21ELURZTFVqY2hfaUk0R3hqSVBfMlhiTXpncktEWm1MUTR2b3dpVEtnJnN5c3RlbT1tZWRpYS1zZXJ2aWNlJmF1dGhlZEluPW1lZGlhLXNlcnZpY2UmZXhwaXJlcz0xNTgwMjQ1MTI3MDAwJm11bHRpZmFjdG9yPXRydWU=.TFdnMOQhGIhe4ouTrpT3ptSB5k7q2VMXp2mErDRsZfP3UA0hVW26FkT4f5tT1BfExd0RqQ1cnrd5ocp1btk6VIfzG2b+v3vTJ7VIiVU01++jeOrXSjo3yb0irDFR1H2N1/D4Hvt/FObRm1oeESj8wUP7/1TN+ha/zoF/QzsoqDBvjUjho2qbhlZ1xBS/0uWwLiV6or/dldLV7RLUnZ4qWLelSuv5DcD25VXXdf3COmdmG48NWAuAOMXuPmsRpHD84UbYjU98ABHAQYBLMiJ7oAman7PmC2Hmy4NJUNMxlDrjBcqOrWd9LEjtskTQRECCoTpNQ9YGmMN0iDGG7qcqU/Zpd1WCRYt3iBfxRvoIvIRgR/iBK4awp4n8ad0FQg2IRr7RjuC09trKj7TUmroQWNwefCJHeyt9j/98ZdYrO3vF84JYUuIK76Oh0Yrx1W5qwE7ZHCaauqb9u0g/p9D7iRemIWbO4CEp1w0UxyN/BBBMlO7/9CRkWf42mWogYUznRmxiGVUjB2wW+OJVepZEdD2a2RxTZIY21pQ2RrR8q2rPTSopgAwyvVQH580v1vzl+T26Js0RcSJMVUhjvPQrQKjYgmLaLlb8s1X+c0EnlAZOunVu/2FPhNk/S2L85M/3R4Z3QloEa5ZVhQRydp7Xd63Dk0xAf9xUoZx6YYyr6QU=; PLAY_SESSION=eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNzcmZUb2tlbiI6ImQyNzQ0NGEwOWM2ODI5ODc0ZWM0MDQxZGNlNjY0YzA3MzkwNGVjZjItMTU4MDI0MTYzODc4Ny0wYzgxYzEyNjliYTM4OWM1NDJhYjFjNTgifSwibmJmIjoxNTgwMjQxNjM4LCJpYXQiOjE1ODAyNDE2Mzh9.LwK0g_UJ8R9INfBL5PQhciaAjYHA0gtzlRbLyu9K9LE' }
+        'headers': { 'Cookie' : '_ga=GA1.3.1554421536.1567680633; cto_lwid=23c26aeb-8be8-48c9-a0d6-329e5fb53374; __gads=ID=2449a78b568fcae6:T=1567680633:S=ALNI_MbQ0SDZgWx77F5StCvApzjPoP-o2Q; _gid=GA1.3.1286121082.1580120300; permutive-session=%7B%22session_id%22%3A%22ad1081c1-bdb0-4ba9-87a1-bca51705c7c1%22%2C%22last_updated%22%3A%222020-01-28T09%3A36%3A05.258Z%22%7D; _gat=1; gutoolsAuth-assym=Zmlyc3ROYW1lPU5pa28mbGFzdE5hbWU9S29tbWVuZGEmZW1haWw9bmlrb2xhdXMua29tbWVuZGFAZ3VhcmRpYW4uY28udWsmYXZhdGFyVXJsPWh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hLS9BQXVFN21ELURZTFVqY2hfaUk0R3hqSVBfMlhiTXpncktEWm1MUTR2b3dpVEtnJnN5c3RlbT1tZWRpYS1zZXJ2aWNlJmF1dGhlZEluPW1lZGlhLXNlcnZpY2UmZXhwaXJlcz0xNTgwMjk2OTU1MDAwJm11bHRpZmFjdG9yPXRydWU=.qOs0Gc4YomW6vNwUQTo5rG7sh1Yn5HqoTUgAcg2rK39HK2paNnngL7KwV1w0ALvFT33YzEjlDsw4uryGUu6dvO08GnctTERe1V0fUFgfH3mnHZ2a+HdroypLzeeE7rV883djXUHe36GhQBeG3HSiDH7AV05e8g0+BXIZr12Ewx71cjYHnc3mzhtlinbFJ7B/X+I5wxmFLTeTEPftsfl7CtnOs9lUorhCdP657ubs1rUiJVRj7bNw6HjYKxYOTYDXUMaoHGXtVHa7sT5yVjJZJ258Xm2+/4z4lPGbyIpqbsECltjl4xShKuvxGIj8uBO6oOvqX3kIZgjjZpyDwmqp0wu7aOQt0b3EJ13kz2kCP6USMQ+AZgGo5oAGl3zFfYM9f/5s+OhcZ+zNvS+YMr1mpTlpzMh6Pd/RAiw4akEgQyNosbU1SCGSXYaqnW92f34eBXyllfEEe1GkoeaqgNHhJebmGWLTDR6C2bTZoCgxMLbbVcyUpDwGzf0xvnOcokF9mCpK9dAPFqN7jLqtPpWlO8XEaaJvxQMU4xk37Wg5DCZlsOIslvkW9GWY6e+/9iSJY0Nb2zBIZnpBJad6Jg3PH3y/hEAEYgaxNFncZkkdUbd/pN1xTmbA2yYuPuKIbmeTTifm1dcrYAOC0ObZjvsF06nw1Bcr1CWdHyyasluyulI=; PLAY_SESSION=eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNzcmZUb2tlbiI6ImIxYzQ3MzdlYWJhYjZmOTg2ZGEwNTQ5ZWI4NDRkZDk2Yzc1MjBkYTItMTU4MDI5MzM2MTk5MS1iMWQyNjYyMGZmNzM5MzU3YjcxMjk2ZWEifSwibmJmIjoxNTgwMjkzMzYxLCJpYXQiOjE1ODAyOTMzNjF9.ifqcbKPkGw355VqcmM3ylk3f-ySFWI3pwDbaQ8L2jVc' }
     }).then( resp => resp.json() )
         .then( obj => {
 
@@ -67,11 +67,11 @@ const parse = (article, i) => {
 
 }
 
-const pages = Array(25).fill().map((_, i) => i)
+const pages = Array(1).fill().map((_, i) => i)
 
 const ps = pages.map( i => {
 
-    return fetch(url + '&page-size=200&page=' + (i + 1)).then( resp => resp.json() )
+    return fetch(url + '&page-size=100&page=' + (i + 1)).then( resp => resp.json() )
 
 } )
 
