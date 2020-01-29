@@ -24,6 +24,7 @@ codeToName['US'] = 'US'
 import * as topojson from 'topojson'
 
 const countriesFc = topojson.feature(world, world.objects.countries)
+
 const landFc = topojson.feature(lw, lw.objects.land)
 
 const d3 = Object.assign({}, d3b, d3gp)
@@ -76,30 +77,35 @@ class App extends React.Component {
             .attr('d', path)
             .attr('class', 'cc-land')
 
+        const countriesToDraw = countriesFc.features.filter(f => this.props.mapArticles.some( obj => {
+
+                return String(obj.countryCode) === String(f.id)
+
+            } ))
+
         const countryShapes = svg
                 .selectAll('blah')
-                .data(countriesFc.features)
+                .data(countriesToDraw)
                 .enter()
                 .append('path')
                 .attr('d', path)
                 .attr('class', f => {
-
-                    if(this.props.mapArticles.some( obj => {
-
-                        return String(obj.countryCode) === String(f.id)
-
-                    } )){
-                        return 'cc-country cc-country--hl'
-                    }
-                    return 'cc-country'
-
+                    return 'cc-country cc-country--hl'
                 })
-                .on('mouseover', (d) => {
+                .on('mouseover', d => {
                     let selectedArticles = []
                     articles.forEach(a => { if (a.countryCode === d.id) { selectedArticles.push(a) } })
                     this.setState({ selectedArticles })
+
+
+                    svg.selectAll('.cc-country')
+                        .attr('class', d2 => d2.id === d.id ? 'cc-country cc-country--hl' : 'cc-country cc-country--hl cc-country--faded')
+
                 })
-                .on('mouseout', () => this.setState({ selectedArticles: [] }))
+                .on('mouseout', () => {
+                    this.setState({ selectedArticles: [] })
+                    svg.selectAll('.cc-country').attr('class', 'cc-country cc-country--hl')
+                })
  
             this.setState({ countryShapes })
 
@@ -114,26 +120,16 @@ class App extends React.Component {
         countryShapes.attr('class', f => {
 
             if(!selected) {
-
-                return this.props.mapArticles.some( obj => {
-                    return String(obj.countryCode) === String(f.id)
-                } ) ? 'cc-country cc-country--hl' : 'cc-country'
-
+                return 'cc-country cc-country--hl'
             }
 
             if(selected === f.id) {
                 return 'cc-country cc-country--hl'
             }
 
-            if(this.props.mapArticles.some( obj => {
-
-                return String(obj.countryCode) === String(f.id)
-
-            } )){
-                return 'cc-country cc-country--hl cc-country--faded'
-            }
-            return 'cc-country'
-
+           
+            return 'cc-country cc-country--hl cc-country--faded'
+            
         })
 
     }

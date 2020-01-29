@@ -252,8 +252,12 @@ $main: $gu-orange;
 
 .selected-article {
     background: #eaeaea;
+    text-decoration: underline;
+    text-decoration-color: #333;
 }
 
 .selected-article-opinion {
     background: #FCF3ED !important;
+    text-decoration: underline;
+    text-decoration-color: #333;
 }
