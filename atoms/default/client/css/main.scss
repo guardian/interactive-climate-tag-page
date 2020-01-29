@@ -96,6 +96,7 @@ $main: $gu-orange;
     &.cc-country--hl {
         fill: $main;
         stroke: $main;
+        cursor: pointer;
 
         &.cc-country--faded {
             opacity: 0.1;
@@ -247,4 +248,12 @@ $main: $gu-orange;
 }
 .content__meta-container {
     display: none !important;
+}
+
+.selected-article {
+    background: #eaeaea;
+}
+
+.selected-article-opinion {
+    background: #FCF3ED !important;
 }
