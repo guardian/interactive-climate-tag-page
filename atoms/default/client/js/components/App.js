@@ -173,47 +173,6 @@ class App extends React.Component {
 
         console.log(voro)
 
-        const bubbles = svg
-            .selectAll('blah')
-            .data(countriesF)
-            .enter()
-            .append('g')
-
-            .each(function(d, i) {
-
-                const el = d3.select(this)
-
-                const p = proj([d.lng, d.lat])
-
-                console.log(grouped[d.code])
-
-                el.attr('transform', `translate(${p[0]}, ${p[1]})`)
-
-                el
-                    .append('circle')
-                    .attr('r', rScale(grouped[d.code]))
-                    .attr('class', 'cc-bubble')
-
-            })
-
-        const labels = svg
-        .selectAll('blah')
-        .data(countriesF)
-        .enter()
-        .append('text')
-        .each(function(d, i) {
-
-            const el = d3.select(this)
-
-            const p = proj([d.lng, d.lat])
-
-            el.attr('x', p[0])
-            .attr('y', p[1] - rScale(grouped[d.code]) - 6)
-            .html(lab(d.code, grouped[d.code]))
-                .attr('class', 'cc-label')
-
-        })
-
         const voroCells = svg
             .selectAll('blah')
             .data(countriesF)
@@ -234,6 +193,52 @@ class App extends React.Component {
                     .classed('cc-label--shown', (d, j) => j === i)
 
             })
+
+        const bubbles = svg
+            .selectAll('blah')
+            .data(countriesF)
+            .enter()
+            .append('g')
+
+            .each(function(d, i) {
+
+                const el = d3.select(this)
+
+                const p = proj([d.lng, d.lat])
+
+                console.log(grouped[d.code])
+
+                el.attr('transform', `translate(${p[0]}, ${p[1]})`)
+
+                el
+                    .append('circle')
+                    .attr('r', rScale(grouped[d.code]))
+                    .attr('class', 'cc-bubble')
+                    .on('mouseenter', () => labels .classed('cc-label--shown', (d, j) => j === i)
+        
+                    )
+
+            })
+
+        svg.on('mouseleave', () => labels.classed('cc-label--shown', false))
+
+        const labels = svg
+        .selectAll('blah')
+        .data(countriesF)
+        .enter()
+        .append('text')
+        .each(function(d, i) {
+
+            const el = d3.select(this)
+
+            const p = proj([d.lng, d.lat])
+
+            el.attr('x', p[0])
+            .attr('y', p[1] - rScale(grouped[d.code]) - 6)
+            .html(lab(d.code, grouped[d.code]))
+                .attr('class', 'cc-label')
+
+        })
 
     }
 

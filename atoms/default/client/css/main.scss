@@ -55,10 +55,15 @@ $main: $gu-orange;
 
 .cc-bubblemap {
     width: 100%;
-    max-width: 980px;
+    max-width: 760px;
     margin: 0 10px;
     margin-left: 250px;
     overflow: visible !important;
+
+    & text {
+        pointer-events: none;
+        user-select: none;
+    }
 }
 
 .cc-bubble {
